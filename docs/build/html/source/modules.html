@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>grfsaw &#8212; GRFsaw  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GRFsaw  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">grfsaw</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="grfsaw">
+<h1>grfsaw<a class="headerlink" href="#grfsaw" title="Permalink to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="grfsaw.html">grfsaw package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="grfsaw.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grfsaw.html#module-grfsaw.autocorrelation_fft">grfsaw.autocorrelation_fft module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="grfsaw.html#grfsaw.autocorrelation_fft.autocorrelation_fft"><code class="docutils literal notranslate"><span class="pre">autocorrelation_fft()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="grfsaw.html#module-grfsaw.autocorrelation_xyz">grfsaw.autocorrelation_xyz module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="grfsaw.html#grfsaw.autocorrelation_xyz.autocorrelation_xyz"><code class="docutils literal notranslate"><span class="pre">autocorrelation_xyz()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="grfsaw.html#grfsaw.autocorrelation_xyz.loop_2d"><code class="docutils literal notranslate"><span class="pre">loop_2d()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="grfsaw.html#grfsaw.autocorrelation_xyz.loop_3d"><code class="docutils literal notranslate"><span class="pre">loop_3d()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="grfsaw.html#module-grfsaw.clean_structure">grfsaw.clean_structure module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="grfsaw.html#grfsaw.clean_structure.clean_structure"><code class="docutils literal notranslate"><span class="pre">clean_structure()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="grfsaw.html#module-grfsaw.distributions">grfsaw.distributions module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="grfsaw.html#grfsaw.distributions.gamma_distribution"><code class="docutils literal notranslate"><span class="pre">gamma_distribution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="grfsaw.html#grfsaw.distributions.normal_distribution"><code class="docutils literal notranslate"><span class="pre">normal_distribution()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="grfsaw.html#module-grfsaw.find_shortest_path">grfsaw.find_shortest_path module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="grfsaw.html#grfsaw.find_shortest_path.find_shortest_path"><code class="docutils literal notranslate"><span class="pre">find_shortest_path()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="grfsaw.html#grfsaw.find_shortest_path.find_shortest_path_2d"><code class="docutils literal notranslate"><span class="pre">find_shortest_path_2d()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="grfsaw.html#grfsaw.find_shortest_path.find_shortest_path_3d"><code class="docutils literal notranslate"><span class="pre">find_shortest_path_3d()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="grfsaw.html#module-grfsaw.local_wave_sums">grfsaw.local_wave_sums module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="grfsaw.html#grfsaw.local_wave_sums.local_wave_sum_2d"><code class="docutils literal notranslate"><span class="pre">local_wave_sum_2d()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="grfsaw.html#grfsaw.local_wave_sums.local_wave_sum_3d"><code class="docutils literal notranslate"><span class="pre">local_wave_sum_3d()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="grfsaw.html#module-grfsaw.microstructure">grfsaw.microstructure module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="grfsaw.html#grfsaw.microstructure.Microstructure"><code class="docutils literal notranslate"><span class="pre">Microstructure</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="grfsaw.html#grfsaw.microstructure.Microstructure.analytic_ssa"><code class="docutils literal notranslate"><span class="pre">Microstructure.analytic_ssa()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="grfsaw.html#grfsaw.microstructure.Microstructure.autocorrelation"><code class="docutils literal notranslate"><span class="pre">Microstructure.autocorrelation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="grfsaw.html#grfsaw.microstructure.Microstructure.cleaning"><code class="docutils literal notranslate"><span class="pre">Microstructure.cleaning()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="grfsaw.html#grfsaw.microstructure.Microstructure.create"><code class="docutils literal notranslate"><span class="pre">Microstructure.create()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="grfsaw.html#grfsaw.microstructure.Microstructure.find_shortest_path"><code class="docutils literal notranslate"><span class="pre">Microstructure.find_shortest_path()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="grfsaw.html#grfsaw.microstructure.Microstructure.plot"><code class="docutils literal notranslate"><span class="pre">Microstructure.plot()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="grfsaw.html#grfsaw.microstructure.Microstructure.plot_distributions"><code class="docutils literal notranslate"><span class="pre">Microstructure.plot_distributions()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="grfsaw.html#grfsaw.microstructure.Microstructure.save"><code class="docutils literal notranslate"><span class="pre">Microstructure.save()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="grfsaw.html#grfsaw.microstructure.Microstructure.save_parameters"><code class="docutils literal notranslate"><span class="pre">Microstructure.save_parameters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="grfsaw.html#grfsaw.microstructure.Microstructure.visualize_3d"><code class="docutils literal notranslate"><span class="pre">Microstructure.visualize_3d()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="grfsaw.html#module-grfsaw.tools">grfsaw.tools module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="grfsaw.html#grfsaw.tools.lcm"><code class="docutils literal notranslate"><span class="pre">lcm()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="grfsaw.html#grfsaw.tools.num2txt"><code class="docutils literal notranslate"><span class="pre">num2txt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="grfsaw.html#grfsaw.tools.set_axis_equal"><code class="docutils literal notranslate"><span class="pre">set_axis_equal()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="grfsaw.html#module-grfsaw">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/source/modules.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GRFsaw  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">grfsaw</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, Lars Blatny.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,433 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>grfsaw package &#8212; GRFsaw  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GRFsaw  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">grfsaw package</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="grfsaw-package">
+<h1>grfsaw package<a class="headerlink" href="#grfsaw-package" title="Permalink to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="module-grfsaw.autocorrelation_fft">
+<span id="grfsaw-autocorrelation-fft-module"></span><h2>grfsaw.autocorrelation_fft module<a class="headerlink" href="#module-grfsaw.autocorrelation_fft" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="grfsaw.autocorrelation_fft.autocorrelation_fft">
+<span class="sig-prename descclassname"><span class="pre">grfsaw.autocorrelation_fft.</span></span><span class="sig-name descname"><span class="pre">autocorrelation_fft</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">binary_array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grfsaw.autocorrelation_fft.autocorrelation_fft" title="Permalink to this definition">¶</a></dt>
+<dd><p>autocorrelation_fft computes the (non-normalized) angular-averaged two-point correlation (autocorrelation) function.
+It is based on utilizing Fast Fourier Transform (FFT).
+According to the Wiener-Khinchin Theorem, the autocorrelation is given by
+the Fourier transform of the absolute square of the fourier coefficients of binary_array.
+Assumption: the microstructure is wrapped around its boundaries (i.e., PBC).</p>
+<p>Arguments:
+binary_array: binary two- or three-dimensional numpy array denoting solid (1) and void (0) points.</p>
+<p>Returns:
+numpy array of the two-point correlation function.</p>
+</dd></dl>
+
+</section>
+<section id="module-grfsaw.autocorrelation_xyz">
+<span id="grfsaw-autocorrelation-xyz-module"></span><h2>grfsaw.autocorrelation_xyz module<a class="headerlink" href="#module-grfsaw.autocorrelation_xyz" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="grfsaw.autocorrelation_xyz.autocorrelation_xyz">
+<span class="sig-prename descclassname"><span class="pre">grfsaw.autocorrelation_xyz.</span></span><span class="sig-name descname"><span class="pre">autocorrelation_xyz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">binary_array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">procs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grfsaw.autocorrelation_xyz.autocorrelation_xyz" title="Permalink to this definition">¶</a></dt>
+<dd><p>autocorrelation_xyz computes the (non-normalized) two-point correlation (autocorrelation) functions in the d=2 or 3 axis-aligned directions.</p>
+<p>Arguments:
+binary_array: binary two- or three-dimensional numpy array denoting solid (1) and void (0) points.
+r_max: maximum distance as an integer number of mesh points.
+procs: integer number of processors available for the computation.</p>
+<p>Returns:
+numpy arrays of the two-point correlation functions in x and y (and z if 3D) direction.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grfsaw.autocorrelation_xyz.loop_2d">
+<span class="sig-prename descclassname"><span class="pre">grfsaw.autocorrelation_xyz.</span></span><span class="sig-name descname"><span class="pre">loop_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">binary_array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grfsaw.autocorrelation_xyz.loop_2d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grfsaw.autocorrelation_xyz.loop_3d">
+<span class="sig-prename descclassname"><span class="pre">grfsaw.autocorrelation_xyz.</span></span><span class="sig-name descname"><span class="pre">loop_3d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">binary_array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grfsaw.autocorrelation_xyz.loop_3d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-grfsaw.clean_structure">
+<span id="grfsaw-clean-structure-module"></span><h2>grfsaw.clean_structure module<a class="headerlink" href="#module-grfsaw.clean_structure" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="grfsaw.clean_structure.clean_structure">
+<span class="sig-prename descclassname"><span class="pre">grfsaw.clean_structure.</span></span><span class="sig-name descname"><span class="pre">clean_structure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">binary_array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grfsaw.clean_structure.clean_structure" title="Permalink to this definition">¶</a></dt>
+<dd><p>clean_structure cleans a microstructure by removing standalone clusters.
+More precisely, it deletes any solid point (change label from 1 to 0) that do not belong to any spanning cluster.
+Accomplished by applying the Burning Method from all 6 sides without the “not-at-bottom”-check.
+Note that there can be more than one spanning cluster, and that if no spanning cluster exists all points are deleted.</p>
+<p>Arguments:
+binary_array: binary two- or three-dimensional numpy array denoting solid (1) and void (0) points.</p>
+<p>Returns:
+binary two- or three-dimensional numpy array denoting solid (1) and void (0) points.</p>
+</dd></dl>
+
+</section>
+<section id="module-grfsaw.distributions">
+<span id="grfsaw-distributions-module"></span><h2>grfsaw.distributions module<a class="headerlink" href="#module-grfsaw.distributions" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="grfsaw.distributions.gamma_distribution">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">grfsaw.distributions.</span></span><span class="sig-name descname"><span class="pre">gamma_distribution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">momtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xtol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-14</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">badvalue</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">longname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shapes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extradoc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grfsaw.distributions.gamma_distribution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">rv_continuous</span></code></p>
+<p>Gamma probability distribution function used for sampling the magnitude of the wavevector.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grfsaw.distributions.normal_distribution">
+<span class="sig-prename descclassname"><span class="pre">grfsaw.distributions.</span></span><span class="sig-name descname"><span class="pre">normal_distribution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mean</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">std</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000000000.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grfsaw.distributions.normal_distribution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gaussian probability distribution function used for sampling the magnitude of the wavevector.</p>
+</dd></dl>
+
+</section>
+<section id="module-grfsaw.find_shortest_path">
+<span id="grfsaw-find-shortest-path-module"></span><h2>grfsaw.find_shortest_path module<a class="headerlink" href="#module-grfsaw.find_shortest_path" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="grfsaw.find_shortest_path.find_shortest_path">
+<span class="sig-prename descclassname"><span class="pre">grfsaw.find_shortest_path.</span></span><span class="sig-name descname"><span class="pre">find_shortest_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">binary</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">void_phase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grfsaw.find_shortest_path.find_shortest_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>find_shortest_path find shortest path of the spanning cluster by applying the Burning Method from all 6 sides.</p>
+<p>Arguments:
+binary: binary two- or three-dimensional numpy array denoting solid (1) and void (0) points.
+void_phase: boolean indicating wether calculating the path through the void phase (True) or solid phase (False, default).</p>
+<p>Returns:
+list of 2 (if 2D) or 3 (if 3D) integers representing the shortest path through the structure in terms of number of mesh points.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grfsaw.find_shortest_path.find_shortest_path_2d">
+<span class="sig-prename descclassname"><span class="pre">grfsaw.find_shortest_path.</span></span><span class="sig-name descname"><span class="pre">find_shortest_path_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">binary_in</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grfsaw.find_shortest_path.find_shortest_path_2d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grfsaw.find_shortest_path.find_shortest_path_3d">
+<span class="sig-prename descclassname"><span class="pre">grfsaw.find_shortest_path.</span></span><span class="sig-name descname"><span class="pre">find_shortest_path_3d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">binary_in</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grfsaw.find_shortest_path.find_shortest_path_3d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-grfsaw.local_wave_sums">
+<span id="grfsaw-local-wave-sums-module"></span><h2>grfsaw.local_wave_sums module<a class="headerlink" href="#module-grfsaw.local_wave_sums" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="grfsaw.local_wave_sums.local_wave_sum_2d">
+<span class="sig-prename descclassname"><span class="pre">grfsaw.local_wave_sums.</span></span><span class="sig-name descname"><span class="pre">local_wave_sum_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N_local</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xgrid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ygrid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_hat_1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_hat_2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grfsaw.local_wave_sums.local_wave_sum_2d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function for the (parallellized) summation of standing 2D sinusoidal waves.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grfsaw.local_wave_sums.local_wave_sum_3d">
+<span class="sig-prename descclassname"><span class="pre">grfsaw.local_wave_sums.</span></span><span class="sig-name descname"><span class="pre">local_wave_sum_3d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N_local</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xgrid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ygrid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zgrid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_hat_1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_hat_2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_hat_3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grfsaw.local_wave_sums.local_wave_sum_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function for the (parallellized) summation of standing 3D sinusoidal waves.</p>
+</dd></dl>
+
+</section>
+<section id="module-grfsaw.microstructure">
+<span id="grfsaw-microstructure-module"></span><h2>grfsaw.microstructure module<a class="headerlink" href="#module-grfsaw.microstructure" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="grfsaw.microstructure.Microstructure">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">grfsaw.microstructure.</span></span><span class="sig-name descname"><span class="pre">Microstructure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'output/'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">single_cut</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Nw</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'n'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m_mean</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m_std</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">anitype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'i'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">38683</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">procs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">48</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grfsaw.microstructure.Microstructure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for the microstructure to be generated.</p>
+<section id="attributes-given-by-user">
+<h3>Attributes given by user:<a class="headerlink" href="#attributes-given-by-user" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>shape<span class="classifier">list</span></dt><dd><p>list of 2 (if 2D) or 3 (if 3D) integers representing the (mesh) size of the microstructure as number of mesh points in each direction</p>
+</dd>
+<dt>phi<span class="classifier">float</span></dt><dd><p>desired solid volume fraction = 1 - porosity</p>
+</dd>
+<dt>folder<span class="classifier">str</span></dt><dd><p>name of directory to save data and plots (default: “output/”)</p>
+</dd>
+<dt>single_cut<span class="classifier">boolean</span></dt><dd><p>generate single-cut or double-cut structure (default True)</p>
+</dd>
+<dt>N<span class="classifier">int</span></dt><dd><p>number of waves to use, the more the better but slower (default 10 000)</p>
+</dd>
+<dt>distr<span class="classifier">char</span></dt><dd><p>type of distribution to use for wavevector magnitude sampling, ‘n’ for normal or ‘g’ for gamma distribution (default ‘n’)</p>
+</dd>
+<dt>m_mean<span class="classifier">float</span></dt><dd><p>average number of microstructural elements per length in the x-direction ~ a measure of the grain size of the structure (default 3)</p>
+</dd>
+<dt>m_std<span class="classifier">float</span></dt><dd><p>the standard deviation of m (default 0.001)</p>
+</dd>
+<dt>anitype<span class="classifier">char</span></dt><dd><p>type of preferred direction, ‘h’ for horizontal or ‘v’ for vertical, anything else is interpreted as isotropic (default isotropic)</p>
+</dd>
+<dt>a<span class="classifier">float</span></dt><dd><p>measure of the anisotropy level between 0 and 1 (default 1, meaning isotropic)</p>
+</dd>
+<dt>seed<span class="classifier">int</span></dt><dd><p>seed for RNG (default np.random.randint(1, 1e5))</p>
+</dd>
+<dt>procs<span class="classifier">int</span></dt><dd><p>number of cpus to use for the parallellized computations (default max number of cpus)</p>
+</dd>
+</dl>
+</section>
+<section id="internal-attributes">
+<h3>Internal attributes:<a class="headerlink" href="#internal-attributes" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>q0<span class="classifier">1d float numpy array</span></dt><dd><p>list of wave vector magnitudes</p>
+</dd>
+<dt>theta<span class="classifier">1d float numpy array</span></dt><dd><p>list of wave vector directons</p>
+</dd>
+<dt>binary_array<span class="classifier">2d or 3d boolean numpy array</span></dt><dd><p>the level-cut GRF</p>
+</dd>
+<dt>binary_array_cleaned<span class="classifier">2d or 3d boolean numpy array</span></dt><dd><p>the level-cut GRF containing only the parts belonging to the spanning cluster</p>
+</dd>
+</dl>
+</section>
+<section id="methods">
+<h3>Methods:<a class="headerlink" href="#methods" title="Permalink to this heading">¶</a></h3>
+<dl class="py method">
+<dt class="sig sig-object py" id="grfsaw.microstructure.Microstructure.analytic_ssa">
+<span class="sig-name descname"><span class="pre">analytic_ssa</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#grfsaw.microstructure.Microstructure.analytic_ssa" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the analytic prediction of the specific surface area per unit solid volume (SSA).
+Such analytic expression is only available for isotropic single-cut structures based on the gamma-distribution.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grfsaw.microstructure.Microstructure.autocorrelation">
+<span class="sig-name descname"><span class="pre">autocorrelation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cleaned</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">one_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(13,</span> <span class="pre">8)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fontsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">22</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grfsaw.microstructure.Microstructure.autocorrelation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates and plots the (normalized) autocorrelaton function, aka two-point correlation function.
+The specific surface area per unit solid volume (SSA) is also estimated from this function.
+If cleaned=True it uses the cleaned version of the structure (i.e., the spanning cluster only).
+If one_dim=True the one-dimensional autocorrelaton in all (2 or 3) directons is also calculated.
+The other optional parameters figsize, dpi and fontsize relates to the size and resolution of the plot.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grfsaw.microstructure.Microstructure.cleaning">
+<span class="sig-name descname"><span class="pre">cleaning</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#grfsaw.microstructure.Microstructure.cleaning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cleans the microstructure by removing clusters that do not belong to any spanning clusters.
+Uses the so-called Burning Method, see clean_structure.py for more details.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grfsaw.microstructure.Microstructure.create">
+<span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#grfsaw.microstructure.Microstructure.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates the microstructure with the given user parameters.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grfsaw.microstructure.Microstructure.find_shortest_path">
+<span class="sig-name descname"><span class="pre">find_shortest_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cleaned</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grfsaw.microstructure.Microstructure.find_shortest_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the shortest path of the spanning cluster by applying the Burning Method from all sides.
+See find_shortest_path.py for more details.
+If cleaned=True it uses the cleaned version of the structure (i.e., the spanning cluster only).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grfsaw.microstructure.Microstructure.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slicelist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cleaned</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(13,</span> <span class="pre">8)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fontsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">22</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grfsaw.microstructure.Microstructure.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves plots of the structure.
+If 3D structure, user-defined slices are saved.
+The argument slicelist is only used for 3D structures and is a list of x-, y- and z-indices of slices to be plotted.
+If cleaned=True it uses the cleaned version of the structure (i.e., the spanning cluster only).
+The other optional parameters figsize, dpi and fontsize relates to the size and resolution of the plot.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grfsaw.microstructure.Microstructure.plot_distributions">
+<span class="sig-name descname"><span class="pre">plot_distributions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(13,</span> <span class="pre">8)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fontsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">22</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grfsaw.microstructure.Microstructure.plot_distributions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves histograms of the sampling of wave lengths and directions.
+The optional parameters figsize, dpi and fontsize relates to the size and resolution of the plots.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grfsaw.microstructure.Microstructure.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cleaned</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vtk</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grfsaw.microstructure.Microstructure.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the structure to file.
+If cleaned=True it uses the cleaned version of the structure (i.e., the spanning cluster only).
+If vtk=True the structure is saved as a VTK-file (this requires PyVista and works only for 3D structures),
+otherwise it is saved as a CSV-file with columns representing the x, y and z coordinates where
+x = 0, …, shape[0]-1, y = 0, …, shape[1]-1 and z = 0, …, shape[2]-1.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grfsaw.microstructure.Microstructure.save_parameters">
+<span class="sig-name descname"><span class="pre">save_parameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#grfsaw.microstructure.Microstructure.save_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves setup parameters to folder for future reference.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grfsaw.microstructure.Microstructure.visualize_3d">
+<span class="sig-name descname"><span class="pre">visualize_3d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cleaned</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pyvista</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grfsaw.microstructure.Microstructure.visualize_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Visualizes the full 3D structure. 
+If cleaned=True it uses the cleaned version of the structure (i.e., the spanning cluster only).
+If pyvista=True (recommended) PyVista is used for the visualization.
+If from_file=True the structure is read from the CSV-file in the directory.
+The other optional parameters figsize, dpi and fontsize relates to the size and resolution of the plot.</p>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+</section>
+<section id="module-grfsaw.tools">
+<span id="grfsaw-tools-module"></span><h2>grfsaw.tools module<a class="headerlink" href="#module-grfsaw.tools" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="grfsaw.tools.lcm">
+<span class="sig-prename descclassname"><span class="pre">grfsaw.tools.</span></span><span class="sig-name descname"><span class="pre">lcm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grfsaw.tools.lcm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds the lowest common multiple (lcm) of a and b</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grfsaw.tools.num2txt">
+<span class="sig-prename descclassname"><span class="pre">grfsaw.tools.</span></span><span class="sig-name descname"><span class="pre">num2txt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grfsaw.tools.num2txt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves a number num to name.txt in the directory dir
+dir must end with “/”</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grfsaw.tools.set_axis_equal">
+<span class="sig-prename descclassname"><span class="pre">grfsaw.tools.</span></span><span class="sig-name descname"><span class="pre">set_axis_equal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grfsaw.tools.set_axis_equal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make axes have equal scale for 3D plots.
+Inspired by: <a class="reference external" href="https://stackoverflow.com/questions/13685386/matplotlib-equal-unit-length-with-equal-aspect-ratio-z-axis-is-not-equal-to/">https://stackoverflow.com/questions/13685386/matplotlib-equal-unit-length-with-equal-aspect-ratio-z-axis-is-not-equal-to/</a></p>
+</dd></dl>
+
+</section>
+<section id="module-grfsaw">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-grfsaw" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">grfsaw package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-grfsaw.autocorrelation_fft">grfsaw.autocorrelation_fft module</a><ul>
+<li><a class="reference internal" href="#grfsaw.autocorrelation_fft.autocorrelation_fft"><code class="docutils literal notranslate"><span class="pre">autocorrelation_fft()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-grfsaw.autocorrelation_xyz">grfsaw.autocorrelation_xyz module</a><ul>
+<li><a class="reference internal" href="#grfsaw.autocorrelation_xyz.autocorrelation_xyz"><code class="docutils literal notranslate"><span class="pre">autocorrelation_xyz()</span></code></a></li>
+<li><a class="reference internal" href="#grfsaw.autocorrelation_xyz.loop_2d"><code class="docutils literal notranslate"><span class="pre">loop_2d()</span></code></a></li>
+<li><a class="reference internal" href="#grfsaw.autocorrelation_xyz.loop_3d"><code class="docutils literal notranslate"><span class="pre">loop_3d()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-grfsaw.clean_structure">grfsaw.clean_structure module</a><ul>
+<li><a class="reference internal" href="#grfsaw.clean_structure.clean_structure"><code class="docutils literal notranslate"><span class="pre">clean_structure()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-grfsaw.distributions">grfsaw.distributions module</a><ul>
+<li><a class="reference internal" href="#grfsaw.distributions.gamma_distribution"><code class="docutils literal notranslate"><span class="pre">gamma_distribution</span></code></a></li>
+<li><a class="reference internal" href="#grfsaw.distributions.normal_distribution"><code class="docutils literal notranslate"><span class="pre">normal_distribution()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-grfsaw.find_shortest_path">grfsaw.find_shortest_path module</a><ul>
+<li><a class="reference internal" href="#grfsaw.find_shortest_path.find_shortest_path"><code class="docutils literal notranslate"><span class="pre">find_shortest_path()</span></code></a></li>
+<li><a class="reference internal" href="#grfsaw.find_shortest_path.find_shortest_path_2d"><code class="docutils literal notranslate"><span class="pre">find_shortest_path_2d()</span></code></a></li>
+<li><a class="reference internal" href="#grfsaw.find_shortest_path.find_shortest_path_3d"><code class="docutils literal notranslate"><span class="pre">find_shortest_path_3d()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-grfsaw.local_wave_sums">grfsaw.local_wave_sums module</a><ul>
+<li><a class="reference internal" href="#grfsaw.local_wave_sums.local_wave_sum_2d"><code class="docutils literal notranslate"><span class="pre">local_wave_sum_2d()</span></code></a></li>
+<li><a class="reference internal" href="#grfsaw.local_wave_sums.local_wave_sum_3d"><code class="docutils literal notranslate"><span class="pre">local_wave_sum_3d()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-grfsaw.microstructure">grfsaw.microstructure module</a><ul>
+<li><a class="reference internal" href="#grfsaw.microstructure.Microstructure"><code class="docutils literal notranslate"><span class="pre">Microstructure</span></code></a><ul>
+<li><a class="reference internal" href="#grfsaw.microstructure.Microstructure.analytic_ssa"><code class="docutils literal notranslate"><span class="pre">Microstructure.analytic_ssa()</span></code></a></li>
+<li><a class="reference internal" href="#grfsaw.microstructure.Microstructure.autocorrelation"><code class="docutils literal notranslate"><span class="pre">Microstructure.autocorrelation()</span></code></a></li>
+<li><a class="reference internal" href="#grfsaw.microstructure.Microstructure.cleaning"><code class="docutils literal notranslate"><span class="pre">Microstructure.cleaning()</span></code></a></li>
+<li><a class="reference internal" href="#grfsaw.microstructure.Microstructure.create"><code class="docutils literal notranslate"><span class="pre">Microstructure.create()</span></code></a></li>
+<li><a class="reference internal" href="#grfsaw.microstructure.Microstructure.find_shortest_path"><code class="docutils literal notranslate"><span class="pre">Microstructure.find_shortest_path()</span></code></a></li>
+<li><a class="reference internal" href="#grfsaw.microstructure.Microstructure.plot"><code class="docutils literal notranslate"><span class="pre">Microstructure.plot()</span></code></a></li>
+<li><a class="reference internal" href="#grfsaw.microstructure.Microstructure.plot_distributions"><code class="docutils literal notranslate"><span class="pre">Microstructure.plot_distributions()</span></code></a></li>
+<li><a class="reference internal" href="#grfsaw.microstructure.Microstructure.save"><code class="docutils literal notranslate"><span class="pre">Microstructure.save()</span></code></a></li>
+<li><a class="reference internal" href="#grfsaw.microstructure.Microstructure.save_parameters"><code class="docutils literal notranslate"><span class="pre">Microstructure.save_parameters()</span></code></a></li>
+<li><a class="reference internal" href="#grfsaw.microstructure.Microstructure.visualize_3d"><code class="docutils literal notranslate"><span class="pre">Microstructure.visualize_3d()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-grfsaw.tools">grfsaw.tools module</a><ul>
+<li><a class="reference internal" href="#grfsaw.tools.lcm"><code class="docutils literal notranslate"><span class="pre">lcm()</span></code></a></li>
+<li><a class="reference internal" href="#grfsaw.tools.num2txt"><code class="docutils literal notranslate"><span class="pre">num2txt()</span></code></a></li>
+<li><a class="reference internal" href="#grfsaw.tools.set_axis_equal"><code class="docutils literal notranslate"><span class="pre">set_axis_equal()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-grfsaw">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/source/grfsaw.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GRFsaw  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">grfsaw package</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, Lars Blatny.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    </div>
+  </body>
+</html>
