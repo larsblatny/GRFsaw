@@ -399,7 +399,7 @@ class Microstructure:
 
     def visualize_3d(self, cleaned=False, pyvista=True, from_file=False):
         '''
-        Visualizes the full 3D structure. 
+        Visualizes the full 3D structure.
         If cleaned=True it uses the cleaned version of the structure (i.e., the spanning cluster only).
         If pyvista=True (recommended) PyVista is used for the visualization.
         If from_file=True the structure is read from the CSV-file in the directory.
@@ -531,7 +531,7 @@ class Microstructure:
         plt.xlabel(r'$r/\langle \lambda \rangle$')
         plt.ylabel(r'$g_{norm}$')
         plt.xlim(0, min(2, np.max(dist_autocorr_r / lambda_mean)))
-        plt.savefig(self.folder + "plots/autocorr_normalized" + name + ".png", bbox_inches = 'tight')
+        plt.savefig(self.folder + "plots/autocorrelation" + name + ".png", bbox_inches = 'tight')
 
 
     def analytic_ssa(self):

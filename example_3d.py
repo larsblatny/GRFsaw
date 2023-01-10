@@ -5,7 +5,7 @@ from grfsaw.microstructure import Microstructure
 folder = "output/example_3d"
 
 # Number of processors
-procs = 2
+procs = 4
 
 # Choose if single-cut or double-cut structure
 single_cut = True
@@ -48,10 +48,11 @@ m.plot_distributions()
 m.save(vtk=False)
 m.plot(slicelist=[40])
 m.autocorrelation(one_dim=False)
+m.analytic_ssa()
 
 m.visualize_3d(cleaned=False, pyvista=True, from_file=False)
 
-m.find_shortest_path()
+# m.find_shortest_path()
 
-m.cleaning()
-m.plot(slicelist=[40], cleaned=True)
+# m.cleaning()
+# m.plot(slicelist=[40], cleaned=True)

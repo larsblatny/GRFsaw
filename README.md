@@ -36,7 +36,7 @@ m.create()
 m.plot()
 ```
 
-### List of all options
+### List of user options
 These are all the options the user may specify for the desired microstructure.   
 Only two parameters are required, ```shape``` and ```phi```, the rest are given their default values below:
 ```python
@@ -147,6 +147,8 @@ m.cleaning()
 m.analytic_ssa()
 #   calculates the analytic specific surface area per unit solid volume (SSA)
 ```
+
+The functions are further documented here: https://larsblatny.github.io/GRFsaw/
 
 ## Example: Cleaning
 A microstructure before (left) and after (right) applying `cleaning()`. We see that stand-alone clusters are removed.

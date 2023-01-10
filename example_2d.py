@@ -5,7 +5,7 @@ from grfsaw.microstructure import Microstructure
 folder = "output/example_2d"
 
 # Number of processors
-procs = 3
+procs = 4
 
 # Choose if single-cut or double-cut structure
 single_cut = True
@@ -23,7 +23,7 @@ N = 10000
 distr = 'n'
 
 # Number of microstructural elements per side length in x-direction
-m_mean = 9
+m_mean = 13
 
 # Standard deviation
 m_std = 0.01
@@ -48,7 +48,6 @@ m.plot_distributions()
 m.save(vtk=False) # VTK is only for 3D structures atm
 m.plot()
 m.autocorrelation(cleaned=False, one_dim=True)
-m.analytic_ssa()
 m.find_shortest_path()
 
 m.cleaning()
