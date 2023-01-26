@@ -163,4 +163,5 @@ A plot of the two-point correlation function (aka spatial autocorrelation functi
 Pull requests are welcome. Or feel free to open an issue to discuss what can be changed.
 
 ## License
-This code is licensed under the [MIT License](https://choosealicense.com/licenses/mit/)
+This code is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).   
+Please consider citing the methods used in [this paper](https://doi.org/10.1016/j.compgeo.2021.104284) when making use of this software. 
