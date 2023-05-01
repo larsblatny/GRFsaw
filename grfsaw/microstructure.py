@@ -181,6 +181,7 @@ class Microstructure:
         outputs = [pool.apply_async( local_wave_sum_2d, args=(p, N_local, self.q0, xm, ym, q_hat_1, q_hat_2, phase) ) for p in range(0, self.procs)]
         S_local = [out.get() for out in outputs]
         S = sum(S_local) * np.sqrt(1.0/self.Nw)
+        pool.close()
 
         ### perform level-cut of GRF
         print("    Performing the level-cut of the GRF...")
@@ -225,6 +226,7 @@ class Microstructure:
         outputs = [pool.apply_async( local_wave_sum_3d, args=(p, N_local, self.q0, xm, ym, zm, q_hat_1, q_hat_2, q_hat_3, phase) ) for p in range(0, self.procs)]
         S_local = [out.get() for out in outputs]
         S = sum(S_local) * np.sqrt(1.0/self.Nw)
+        pool.close()
 
         ### perform level-cut of GRF
         print("    Performing the level-cut of the GRF...")

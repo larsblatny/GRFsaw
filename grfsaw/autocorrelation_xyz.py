@@ -12,7 +12,7 @@ def autocorrelation_xyz(binary_array, r_max, procs):
     procs: integer number of processors available for the computation.
 
     Returns:
-    numpy arrays of the two-point correlation functions in x and y (and z if 3D) direction. 
+    numpy arrays of the two-point correlation functions in x and y (and z if 3D) direction.
     """
 
     if binary_array.ndim == 2:
@@ -34,6 +34,7 @@ def autocorrelation_xyz(binary_array, r_max, procs):
             two_point_corr_x.extend( [out.get()[0] for out in outputs] )
             two_point_corr_y.extend( [out.get()[1] for out in outputs] )
             two_point_corr_z.extend( [out.get()[2] for out in outputs] )
+        pool.close()
         return two_point_corr_x, two_point_corr_y, two_point_corr_z
     else:
         two_point_corr_x = []
@@ -42,6 +43,7 @@ def autocorrelation_xyz(binary_array, r_max, procs):
             outputs = [pool.apply_async( loop_2d, args=(r, binary_array) ) for r in range(i*procs, (i+1)*procs)]
             two_point_corr_x.extend( [out.get()[0] for out in outputs] )
             two_point_corr_y.extend( [out.get()[1] for out in outputs] )
+        pool.close()
         return two_point_corr_x, two_point_corr_y
 
 def loop_3d(r, binary_array):
