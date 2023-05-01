@@ -1,5 +1,7 @@
 # Author: Lars Blatny
 from grfsaw.microstructure import Microstructure
+import numpy as np
+########################### Parameters ########################################
 
 # Name of output folder
 folder = "output/example_2d"
@@ -15,6 +17,7 @@ shape = [300, 300]
 
 # Solid volume fraction
 phi = 0.6
+phi_tol = 0.01 # set error tolerance on phi, see below while-loop
 
 # Number of waves. Must be a multiple of procs. Must be divisible by 2 if anisotropy is used.
 N = 10000
@@ -34,12 +37,17 @@ a = 1.0
 # Anisotropy preferred direction, either vertical "v" or horizontal "h". Any other input is treated as isotropy.
 anitype = 'v'
 
-# Initial random seed
-seed = 42
-
 ###############################################################################
 
-m = Microstructure(shape, phi, folder, single_cut, N, distr, m_mean, m_std, anitype, a, seed, procs)
+phi_obs = -1
+iter = 1
+while (abs(phi_obs-phi) > phi_tol or iter == 1):
+    print("Iteration = ", iter)
+    iter += 1
+    seed = np.random.randint(1, 1e5)
+    m = Microstructure(shape, phi, folder, single_cut, N, distr, m_mean, m_std, anitype, a, seed, procs)
+    m.create()
+    phi_obs = np.sum(m.binary_array) / m.num_mesh_points
 
 m.save_parameters()
 m.create()
