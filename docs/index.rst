@@ -25,8 +25,6 @@ Several post-processing schemes are available for
 
 For it's usage and dependencies, please see the README.md file.
 
-For the mathematical background, please see the paper.pdf file in the paper directory.
-
 GRFsaw is licensed under the MIT License.
 
 .. toctree::
