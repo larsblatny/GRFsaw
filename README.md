@@ -18,9 +18,7 @@ Several post-processing schemes are available for
 ## Dependencies
 This code relies only on the standard libraries [numpy](https://numpy.org/), [scipy](https://scipy.org/), [matplotlib](https://matplotlib.org/) and [multiprocessing](https://docs.python.org/3/library/multiprocessing.html)
 
-Use of [PyVista](https://docs.pyvista.org/) is optional, but needed for visualizing 3D microstructures and saving structures as VTK-files.
-
-Tested on Python >= 3.6.
+Use of [PyVista](https://docs.pyvista.org/) is optional (`pip install pyvista`), but needed for visualizing 3D microstructures and saving structures as VTK-files.
 
 ## Usage
 
@@ -164,4 +162,4 @@ Pull requests are welcome. Or feel free to open an issue to discuss what can be 
 
 ## License
 This code is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).   
-Please consider citing the methods used in [this paper](https://doi.org/10.1016/j.compgeo.2021.104284) when making use of this software. 
+Please cite [this paper](https://doi.org/10.1016/j.compgeo.2021.104284) and [this paper](https://doi.org/10.48550/arXiv.2412.05168) when making use of this software. 

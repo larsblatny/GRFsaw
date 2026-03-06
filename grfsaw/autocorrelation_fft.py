@@ -58,7 +58,9 @@ def autocorrelation_fft(binary_array):
     corr_distances, index = np.unique(dist_3d, return_inverse=True)
 
     ### the angular-averaged autocorrelation for each distance r
-    corr_fft_values = np.bincount(index, weights=inv_fft.flatten(order='C')) / np.bincount(index)
+    index_flat = index.ravel(order='C')
+    weights = inv_fft.ravel(order='C')
+    corr_fft_values = np.bincount(index_flat, weights=weights) / np.bincount(index_flat)
     # Here the
     #       Denominator = number of occurances of same distance r (i.e., number of points on the same spherical shell)
     #       Nominator = sum that have the same unique distance r
